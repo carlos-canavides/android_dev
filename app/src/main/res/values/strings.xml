@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidApp</string>
+    <string name="page_title">Android</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="home">Home</string>
+    <string name="list">List</string>
+    <string name="logout">Logout</string>
 </resources>
