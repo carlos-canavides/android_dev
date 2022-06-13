@@ -14,6 +14,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var edit_password: EditText
     private lateinit var checkbox_keep: CheckBox
     private lateinit var button_signin: Button
+    private lateinit var email: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(email.toString(), password.toString())
                     .addOnCompleteListener{
                         if(it.isSuccessful) {
+                            this.email = it.result?.user?.email.toString()
                             showHome(it.result?.user?.email?: "", ProviderType.BASIC)
                         }
                         else {
@@ -59,5 +61,15 @@ class LoginActivity : AppCompatActivity() {
             putExtra("provider", provider.name)
         }
         startActivity(homeIntent)
+    }
+
+    public override fun onResume() {
+        super.onResume()
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            showHome(FirebaseAuth.getInstance().currentUser?.email.toString(), ProviderType.BASIC)
+        } else {
+            setUp()
+        }
     }
 }

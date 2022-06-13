@@ -2,12 +2,15 @@ package com.example.androidapp.fragments
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -30,6 +33,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMyLocationButto
     private var fusedLocationProviderClient: FusedLocationProviderClient? = null
     private lateinit var tvLatitude: TextView
     private lateinit var tvLongitude: TextView
+    private lateinit var buttonGoogleMaps: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +43,13 @@ class HomeFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMyLocationButto
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         tvLatitude = view.findViewById(R.id.tv_latitude)
         tvLongitude = view.findViewById(R.id.tv_longitude)
+        buttonGoogleMaps = view.findViewById(R.id.btn_google_maps)
+        buttonGoogleMaps.setOnClickListener {
+            val gmmIntentUri = Uri.parse("geo:"+currentLocation!!.latitude.toString()+","+currentLocation!!.longitude.toString()+"?z=18")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            startActivity(mapIntent)
+        }
         fetchLocation()
         return view
     }
