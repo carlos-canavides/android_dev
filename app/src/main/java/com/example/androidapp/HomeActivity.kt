@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.androidapp.fragments.ListFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -59,9 +60,13 @@ class HomeActivity : AppCompatActivity() {
                 R.id.menu_home -> {
 
                 };
-                R.id.menu_list -> {};
+                R.id.menu_list -> {
+                    nav.setCheckedItem(R.id.menu_list)
+                    selectedFragment = ListFragment()
+                    titulo = "List"
+                };
             }
-            setTitle(titulo)
+            activity.setTitle(titulo)
             replaceFragment(selectedFragment)
             true
         })

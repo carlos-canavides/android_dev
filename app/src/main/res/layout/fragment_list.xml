@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ListFragment"
+    android:background="@color/color_antiflash_white"
+    android:layout_gravity="center">
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:paddingTop="15sp"
+        android:paddingBottom="15sp"
+        android:stretchColumns="*"
+        android:background="@color/white"
+        android:layout_gravity="center">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:id="@+id/id_cad_details_dialog_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:text="Id"
+                android:textAlignment="center"
+                android:fontFamily="@font/roboto_medium"
+                android:textStyle="bold">
+            </TextView>
+            <TextView
+                android:id="@+id/id_cad_details_dialog_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Value"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/roboto_medium"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium">
+            </TextView>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
