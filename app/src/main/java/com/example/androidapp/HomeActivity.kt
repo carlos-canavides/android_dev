@@ -10,6 +10,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.androidapp.fragments.HomeFragment
 import com.example.androidapp.fragments.ListFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -58,7 +59,9 @@ class HomeActivity : AppCompatActivity() {
                     activity.finish()
                 };
                 R.id.menu_home -> {
-
+                    nav.setCheckedItem(R.id.menu_home)
+                    selectedFragment = HomeFragment()
+                    titulo = "Map"
                 };
                 R.id.menu_list -> {
                     nav.setCheckedItem(R.id.menu_list)
