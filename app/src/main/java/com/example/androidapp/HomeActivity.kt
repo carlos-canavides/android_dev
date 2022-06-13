@@ -47,6 +47,7 @@ class HomeActivity : AppCompatActivity() {
             setUp(email, provider)
         }
         initNavComponent(nav_drawer)
+        replaceFragment(HomeFragment())
     }
 
     private fun initNavComponent(nav: NavigationView) {
