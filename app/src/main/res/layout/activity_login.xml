@@ -123,7 +123,8 @@ android:background="@color/color_antiflash_white">
                 android:textSize="14sp"
                 android:layout_marginStart="9dp"
                 android:layout_marginBottom="20dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:enabled="false"/>
 
         </LinearLayout>
 
