@@ -8,3 +8,6 @@ The proposal is an application that allows you to log in, edit your profile, vie
 ## Technologies
 The main technology I used was [Android Studio](https://developer.android.com/studio). Then I also used [Material Design](https://material.io/) to design the interface, [Firebase](https://firebase.google.com/) for push notifications,
 [Retrofit](https://square.github.io/retrofit/) as REST Client library.
+
+## APK (demo)
+Link to download: [APK](https://drive.google.com/file/d/1jiq2yUn-Ni_nONzdmTbM-smv1cfB_bZA/view?usp=sharing)
